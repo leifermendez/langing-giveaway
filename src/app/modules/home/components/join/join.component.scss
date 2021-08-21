@@ -1,0 +1,247 @@
+@import "../../../../../shared";
+
+:host {
+  display: block;
+  z-index: 1;
+  position: relative;
+  transition: all ease 250ms;
+}
+
+::ng-deep {
+  .social-btn {
+    .uil {
+      font-size: 2rem;
+    }
+  }
+}
+
+.btn-step-1, .btn-step-2 {
+  &:before {
+    //content: "1";
+    //background: white;
+    //position: absolute;
+    //top: .5rem;
+    //right: .5rem;
+    //width: 2rem;
+    //height: 2rem;
+    //font-size: 1.5rem;
+    //padding: 0 .5rem;
+    //text-align: right;
+    //color: #000000;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+  }
+}
+
+.wrapper-join {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem;
+  margin-top: -5rem;
+  z-index: 1;
+  transition: all ease 250ms;
+}
+
+
+.social-btn {
+  margin: 0 0.5rem;
+  border: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  color: $mainColor;
+  font-weight: 500;
+  cursor: pointer;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  text-decoration: none;
+  align-items: start;
+  align-content: start;
+  font-family: 'Montserrat', sans-serif;
+
+
+  .text {
+    padding: .5rem;
+  }
+
+  .icon-block {
+    padding: .5rem;
+
+    &.icon-play {
+      background-color: #f313135c;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all ease 250ms;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.yt-btn {
+    background-color: #DB4437;
+    color: $textColor;
+  }
+
+  &.yt-btn-second {
+    background-color: #DB4437;
+    color: $textColor;
+  }
+
+  &.fb-btn {
+    background-color: #3769d0;
+    color: $textColor;
+  }
+
+  &.fb-btn-second {
+    background-color: #3769d0;
+    color: $textColor;
+  }
+}
+
+
+.avatar-mock {
+  //background-image: url("https://avatars.githubusercontent.com/u/15802366?v=4");
+  background-size: cover;
+  background-color: lightgray;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10rem;
+  width: 10rem;
+}
+
+.avatar-mock-btn {
+  background-image: url("https://media4.giphy.com/media/rOSsuYA9Yj49iYBkj5/200.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10rem;
+  width: 10rem;
+}
+
+.wrapper-video-player {
+  position: fixed;
+  top: 7vh;
+  width: 100%;
+  //pointer-events: none;
+  //height: 100%;
+  transition: all ease 250ms;
+
+  &.hide-video {
+    transform: translateY(100vh);
+  }
+}
+
+.wrapper-post-fb{
+  position: fixed;
+  top: 7vh;
+  width: 100%;
+  //pointer-events: none;
+  //height: 100%;
+  transition: all ease 250ms;
+
+  &.hide-post {
+    transform: translateY(100vh);
+  }
+}
+
+
+.wrapper-fb {
+  //background-color: red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .in-wrapper-fb {
+    background-color: $textColor;
+    box-shadow: 0 0 20px 3px black;
+  }
+}
+
+
+.close {
+  text-align: right;
+  padding: 0 30rem;
+}
+
+.wrapper-comments {
+  transition: all ease 250ms;
+  position: absolute;
+  top: 5rem;
+  z-index: -1;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .in {
+    display: flex;
+    opacity: .1;
+    flex-wrap: wrap;
+  }
+
+  //opacity: .2;
+  .avatar-mock {
+    width: calc(100vw / 10);
+    height: calc(100vw / 10);
+  }
+}
+
+.translate-bottom {
+  &.wrapper-comments {
+    opacity: .2;
+  }
+}
+
+.wrapper-count {
+  position: absolute;
+  right: 0;
+  //background: red;
+  font-size: 4rem;
+  //height: 100%;
+  padding: 2rem;
+  z-index: 1;
+
+  h1, h4 {
+    margin: 0
+  }
+
+  h4 {
+    text-align: right;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper-join {
+    display: none;
+  }
+  .wrapper-video-player {
+    top: 2vh;
+  }
+  .wrapper-comments {
+    top: 0;
+
+    .avatar-mock {
+      width: calc(100vw / 5);
+      height: calc(100vw / 5);
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-join {
+    display: none;
+  }
+}

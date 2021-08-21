@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<div class="col wrapper callback-wrapper">
+  <div class="content-text">
+    <h1 *ngIf="loading" class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
+      {{user?.name}}, Estoy revisando cuantos comentarios tienes!
+    </h1>
+    <h1 *ngIf="!loading" class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
+      {{user?.name}}, vaya! <br> Recuerda más comentarios significa más oportunidades de ganar
+    </h1>
+    <!--    <h1 class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">-->
+    <!--      Excelente! recuerda que más comentarios son más oportunidades de ganar-->
+    <!--    </h1>-->
+    <div [countUp]="numberComment" class="counter-comments animate__animated animate__fadeInUp animation-1">
+<!--      {{numberComment}}-->
+    </div>
+  </div>
+</div>
+
+<!--<div class="callback-wrapper-footer">-->
+<!--  <img *ngIf="loading" class="animate__animated animate__fadeInUp " src="../../../../assets/images/laptop.png" alt="">-->
+<!--  <img *ngIf="!loading" class="animate__animated animate__fadeInUp " src="../../../../assets/images/neutral.png" alt="">-->
+<!--</div>-->

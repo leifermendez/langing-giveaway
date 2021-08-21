@@ -1,0 +1,12 @@
+<div #asHeader class="wrapper">
+  <div class="in-wrapper ">
+    <ul class="list-not menu">
+      <li class="item-menu pointer " [routerLink]="['/']">
+        <img class="avatar" src="../../../../../assets/images/small.png" alt="">
+      </li>
+      <li class="pointer  item-menu animate__animated animate__fadeInDown animation-{{i}}" *ngFor="let link of links;let i = index">
+        <a [href]="link.link" target="_blank"><span [innerHTML]="link?.icon"></span><span class="text">{{link?.name}}</span></a>
+      </li>
+    </ul>
+  </div>
+</div>

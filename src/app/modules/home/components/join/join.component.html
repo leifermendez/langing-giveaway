@@ -1,0 +1,58 @@
+<div *ngIf="showAll">
+  <div #asJoin class="wrapper-join ">
+    <div *ngFor="let a of menuSteps;let i = index">
+      <a [href]="a?.href"
+         class="social-btn btn draw-border {{a?.class}} animate__animated animate__fadeInDown animation-7">
+        <span class="icon-block" [innerHTML]="a.icon"></span>
+        <span class="text">{{a.label}}</span>
+      </a>
+      <div class="step animate__animated animate__fadeInDown animation-8">
+        <span>Paso <b>{{i + 1}}</b></span>
+      </div>
+    </div>
+
+
+    <div>
+      <button class="social-btn btn draw-border avatar-mock-btn animate__animated animate__fadeInDown animation-8"
+              (click)="move('SHOW_VIDEO')">
+        <span class="icon-block icon-play"><i class="uil uil-youtube"></i></span>
+      </button>
+      <div class="step animate__animated animate__fadeInDown animation-9">
+        <span>¿Más info?</span>
+      </div>
+    </div>
+  </div>
+
+  <div #asComments class="wrapper-comments ">
+    <div class="wrapper-count">
+      <h1 [countUp]="participants.length">0</h1>
+      <h4>Participantes</h4>
+    </div>
+    <div class="in">
+      <div class="avatar-mock animate__animated animate__fadeInDown animation-{{i*3}}"
+           *ngFor="let a of participants;let i = index" [style.backgroundImage]="'url('+a?.avatar+')'">
+
+      </div>
+    </div>
+
+  </div>
+
+  <div #asVideo class="wrapper-video-player hide-video">
+    <div class="in-wrapper-video-player">
+      <div class="close pointer" (click)="move('HIDE_VIDEO');closeVideo()">Cerrar <i class="uil uil-times"></i></div>
+      <youtube-player (stateChange)="test($event)" (ready)="setPlayer($event)" [playerVars]="playerVars"
+                      [className]="'video-player'" videoId="ZP-5TZkFv_8"></youtube-player>
+    </div>
+
+  </div>
+
+  <div #asCommentFb class="wrapper-post-fb hide-post">
+
+    <div class="wrapper-fb" *ngIf="urlComment">
+      <ng-container *ngTemplateOutlet="commentComponent"></ng-container>
+    </div>
+
+  </div>
+</div>
+
+

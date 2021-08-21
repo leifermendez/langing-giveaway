@@ -1,0 +1,29 @@
+.content-text{
+  //background-color: red;
+  padding: 1rem 0;
+  display: grid;
+  justify-content: center;
+}
+
+.content-text h1{
+  margin: 0;
+}
+
+.counter-comments{
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 600;
+}
+
+.callback-wrapper-footer{
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.callback-wrapper-footer img{
+  height: 35rem;
+}

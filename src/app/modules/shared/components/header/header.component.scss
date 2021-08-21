@@ -1,0 +1,62 @@
+@import "../../../../../shared";
+
+:host {
+  display: block;
+  z-index: 1;
+  position: relative;
+  transition: all ease 250ms;
+}
+
+.list-not {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: $textColor;
+  opacity: .7;
+  align-content: center;
+  align-items: center;
+
+  .item-menu {
+    padding: .5rem 1.5rem;
+    //text-transform: uppercase;
+    font-size: .85rem;
+    font-weight: 400;
+    a{
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    span {
+      padding: 0 .25rem;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+  padding: 2rem;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 5rem;
+}
+
+
+@media screen and (max-width: 450px) {
+  .list-not{
+    .item-menu{
+      font-size: 1.1rem;
+      .text{
+        display: none;
+      }
+    }
+  }
+}

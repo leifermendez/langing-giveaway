@@ -1,0 +1,166 @@
+@import "../../../../../shared";
+
+:host {
+  display: block;
+  z-index: 0;
+  position: relative;
+  transition: all ease 250ms;
+}
+
+.avatar-square {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.wrapper-title {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  min-height: 20rem;
+}
+
+.image-cta-down{
+  background-image: url("https://i.giphy.com/media/wQUI1JfvBg6wU0db9R/giphy-downsized.gif");
+  width: 150px;
+  height: 150px;
+  background-position-x: center;
+  background-size: cover;
+}
+
+.btn-cta {
+  background-color: $textColor;
+  margin: 1rem;
+  padding: 1rem;
+  color: $mainColor;
+  font-size: 2rem;
+
+  .uil {
+    pointer-events: none;
+  }
+}
+
+
+.avatar-mock {
+  background-image: url("https://avatars.githubusercontent.com/u/15802366?v=4");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}
+
+.list-not {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.gift-wrapper {
+  background-color: white;
+  border-right: solid 2px #1a1a1a;
+
+  .gift {
+
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 1rem;
+
+    img {
+      width: 100px;
+    }
+
+  }
+
+}
+
+.translate-left {
+  transform: translateX(-95vw);
+}
+
+.mobile-section {
+  display: none;
+}
+
+.hover-faq-section {
+  background-color: $mainColor;
+}
+
+.faq-section {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  height: 10rem;
+
+  &.show-faq {
+    opacity: 1;
+    transform: translateX(95vw);
+  }
+}
+
+.back-arrow{
+  margin: 1rem 0;
+  background-color: $textColor;
+  color: $mainColor;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-cta {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .mobile-section {
+    justify-content: flex-start;
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+
+    .social-btn {
+      //background-color: red;
+      width: 5rem;
+      height: 5rem;
+      border: 0;
+      padding: 0;
+      font-size: 1.2rem;
+      color: $mainColor;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      margin-right: .5rem;
+      font-family: 'Montserrat', sans-serif;
+
+      &.fb-btn {
+        background-color: #3769d0;
+        color: $textColor;
+      }
+
+      &.fb-btn-second {
+        background-color: #3769d0;
+        color: $textColor;
+      }
+
+      &.fb-btn-third {
+        background-color: #fd2e2e;
+      }
+    }
+  }
+}
+
