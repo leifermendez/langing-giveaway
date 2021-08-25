@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:3000/api/1.0'
+  api: 'http://localhost:3000/api/1.0',
+  videoMain: 'https://www.youtube.com/watch?v=ztatrDq65oU'
 };
 
 /*

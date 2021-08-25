@@ -1,21 +1,87 @@
-.content-text{
+@import "src/shared";
+
+.content-text {
   //background-color: red;
   padding: 1rem 0;
   display: grid;
   justify-content: center;
 }
 
-.content-text h1{
+.content-text h1 {
   margin: 0;
 }
 
-.counter-comments{
+.counter-comments {
   text-align: center;
   font-size: 7rem;
   font-weight: 600;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
-.callback-wrapper-footer{
+.close-arrow{
+  cursor: pointer;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  border:0;
+  margin: 1rem 0;
+  background-color: $textColor;
+  color: $mainColor;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.total-comments, .not-subscribed {
+  font-weight: 500;
+  text-align: center;
+}
+
+.not-subscribed{
+  padding-top: 3rem;
+}
+
+.total-comments .btn-default-1 span {
+  padding-left: .5rem;
+}
+
+.list-comment {
+  //background: red;
+  background: $mainColor;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  box-shadow: 0px -12px 20px 20px #1a1a1aad;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    li {
+      font-size: 85%;
+      background-color: #ffffff0d;
+      padding: .5rem;
+
+      a{
+        padding: 0 .25rem;
+        color: $textColor;
+      }
+    }
+  }
+}
+
+.callback-wrapper-footer {
   position: fixed;
   bottom: 0;
   pointer-events: none;
@@ -24,6 +90,6 @@
   justify-content: center;
 }
 
-.callback-wrapper-footer img{
+.callback-wrapper-footer img {
   height: 35rem;
 }

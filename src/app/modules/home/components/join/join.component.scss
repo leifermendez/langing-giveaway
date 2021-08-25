@@ -90,6 +90,28 @@
     }
   }
 
+  &.user-btn{
+    background-image: url("https://i.giphy.com/media/LpXHizl10xFVC71cTj/giphy.webp");
+    background-position: 60% 30%;
+    background-repeat: no-repeat;
+    background-size: 140%;
+    color: $textColor;
+    .text{
+      background-color: #3affff75;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $mainColor;
+      transition: all ease 250ms;
+
+      &:hover{
+        background-color: transparent;
+      }
+    }
+  }
+
   &.yt-btn {
     background-color: #DB4437;
     color: $textColor;

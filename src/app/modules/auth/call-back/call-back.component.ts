@@ -21,9 +21,9 @@ export class CallBackComponent implements OnInit {
   ngOnInit(): void {
     this.token = this.route.snapshot.queryParamMap.get('tok')
     this.cookieService.delete('token')
+    this.cookieService.set('token', this.token, 4, '/')
     this.loadData()
     setTimeout(() => {
-      this.cookieService.set('token', this.token, 4, '/')
       this.router.navigate(['/', 'participants'])
     }, 1000)
   }

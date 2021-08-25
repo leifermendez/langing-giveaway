@@ -20,6 +20,18 @@ body, head {
   }
 }
 
+.btn-default-1{
+  cursor: pointer;
+  background-color: transparent;
+  padding: .75rem 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid white;
+  color: $textColor;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .section-block {
   padding-top: 0rem;
@@ -67,6 +79,10 @@ body, head {
 
 .d-none {
   display: none !important;
+}
+
+.d-line-grid{
+  display: inline-grid !important;
 }
 
 .d-block {

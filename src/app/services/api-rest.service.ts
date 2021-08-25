@@ -16,6 +16,6 @@ export class ApiRestService {
   }
 
   getNumberComments(name = ''): Observable<any> {
-    return this.httpClient.get<any>(`${environment.api}/comments?displayName=${name}`);
+    return this.httpClient.get<any>(`${environment.api}/comments`);
   }
 }

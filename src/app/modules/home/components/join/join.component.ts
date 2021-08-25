@@ -14,6 +14,7 @@ import {environment} from "../../../../../environments/environment";
 import {ApiRestService} from "../../../../services/api-rest.service";
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
+import {HomeService} from "../../services/home.service";
 
 declare var window: any;
 declare var FB: any;
@@ -41,38 +42,40 @@ export class JoinComponent implements OnInit, AfterViewInit, AfterContentInit {
   urlComment = `130456915783281`;
   listObservables$: Array<Subscription> = []
   showAll = false;
+  currentUser: any = null
 
   constructor(private utilService: UtilService, private renderer2: Renderer2, private fb: FacebookService,
-              private apiRestService: ApiRestService, private route: ActivatedRoute) {
+              private apiRestService: ApiRestService, private route: ActivatedRoute,
+              private homeService: HomeService) {
 
     this.showComment = this.route.snapshot.queryParamMap.get('show_comment');
     // console.log('*^**', this.showComment)
-
-    const initParams: InitParams = {
-      appId: '2832050400453938',
-      xfbml: true,
-      version: 'v10.0'
-    };
-
-    fb.init(initParams);
+    //
+    // const initParams: InitParams = {
+    //   appId: '2832050400453938',
+    //   xfbml: true,
+    //   version: 'v10.0'
+    // };
+    //
+    // fb.init(initParams);
   }
 
   ngAfterViewInit(): void {
-    if (this.showComment && !isNaN(this.showComment)) {
-      setTimeout(() => {
-        // @ts-ignore
-        // FB.XFBML.parse();
-        // window.FB.XFBML.parse();
-        this.utilService.cbAction.emit({a: 'SHOW_COMMENT'});
-        // this.urlComment += this.showComment;
-        console.log('-->', this.urlComment);
-      }, 0)
-    }
+    // if (this.showComment && !isNaN(this.showComment)) {
+    //   setTimeout(() => {
+    //     // @ts-ignore
+    //     // FB.XFBML.parse();
+    //     // window.FB.XFBML.parse();
+    //     this.utilService.cbAction.emit({a: 'SHOW_COMMENT'});
+    //     // this.urlComment += this.showComment;
+    //     console.log('-->', this.urlComment);
+    //   }, 0)
+    // }
   }
 
   ngOnInit(): void {
     // @ts-ignore
-
+    this.currentUser = this.homeService.getCurrentUser()
     this.steps = ['STEP_1'];
     this.menuSteps = [
       {
@@ -114,7 +117,7 @@ export class JoinComponent implements OnInit, AfterViewInit, AfterContentInit {
       cc_lang_pref: 'es',
       iv_load_policy: 3
     };
-    this.loadParticipants();
+    // this.loadParticipants();
     if (!this.apiLoaded) {
       // This code loads the IFrame Player API code asynchronously, according to the instructions at
       // https://developers.google.com/youtube/iframe_api_reference#Getting_Started
@@ -134,19 +137,19 @@ export class JoinComponent implements OnInit, AfterViewInit, AfterContentInit {
 
   initAnimateComment(): void {
     this.renderer2.addClass(this.asJoin.nativeElement, 'translate-bottom');
-    this.renderer2.addClass(this.asComments.nativeElement, 'translate-bottom');
+    // this.renderer2.addClass(this.asComments.nativeElement, 'translate-bottom');
     this.renderer2.removeClass(this.asCommentFb.nativeElement, 'hide-post');
   }
 
   initAnimateVideo(): void {
     this.renderer2.addClass(this.asJoin.nativeElement, 'translate-bottom');
-    this.renderer2.addClass(this.asComments.nativeElement, 'translate-bottom');
+    // this.renderer2.addClass(this.asComments.nativeElement, 'translate-bottom');
     this.renderer2.removeClass(this.asVideo.nativeElement, 'hide-video');
   }
 
   stopAnimateVideo(): void {
     this.renderer2.removeClass(this.asJoin.nativeElement, 'translate-bottom');
-    this.renderer2.removeClass(this.asComments.nativeElement, 'translate-bottom');
+    // this.renderer2.removeClass(this.asComments.nativeElement, 'translate-bottom');
     this.renderer2.addClass(this.asVideo.nativeElement, 'hide-video');
   }
 

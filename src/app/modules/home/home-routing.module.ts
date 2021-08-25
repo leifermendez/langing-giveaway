@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from "./main/main.component";
 import {ParticipantsComponent} from "./participants/participants.component";
+import {SessionGuard} from "../../core/guards/session.guard";
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'participants',
-    component: ParticipantsComponent
+    component: ParticipantsComponent,
+    canActivate: [SessionGuard]
   }
 ];
 

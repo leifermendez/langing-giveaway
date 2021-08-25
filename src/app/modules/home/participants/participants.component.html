@@ -5,19 +5,84 @@
     <h1 *ngIf="loading" class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
       {{user?.name}}, Estoy revisando cuantos comentarios tienes!
     </h1>
-    <h1 *ngIf="!loading" class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
-      {{user?.name}}, vaya! <br> Recuerda más comentarios significa más oportunidades de ganar
-    </h1>
-    <!--    <h1 class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">-->
-    <!--      Excelente! recuerda que más comentarios son más oportunidades de ganar-->
-    <!--    </h1>-->
-    <div [countUp]="numberComment" class="counter-comments animate__animated animate__fadeInUp animation-1">
-<!--      {{numberComment}}-->
-    </div>
+
+    <ng-container *ngIf="!loading">
+      <ng-container *ngIf="user?.isSub">
+        <h1  class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
+          {{user?.name}}, vaya! <br> Recuerda más comentarios significa más oportunidades de ganar
+        </h1>
+        <div [countUp]="numberComment" class="counter-comments animate__animated animate__fadeInUp animation-1">
+        </div>
+        <div *ngIf="numberComment>0" class="total-comments animate__animated animate__fadeInUp animation-1 btn ">
+          <button (click)="showMyComments()" data-micron="tada" class="  btn-default-1 pulse"><i
+            class="uil uil-comment-alt"></i>
+            <span>Tus comentarios</span></button>
+        </div>
+
+        <div *ngIf="numberComment<1" class="total-comments animate__animated animate__fadeInUp animation-1 btn ">
+          <a data-micron="tada" [href]="urlMain" target="_blank" class="  btn-default-1 pulse">
+            <i class="uil uil-external-link-alt"></i>
+            <span>¡Comenta y gana!</span></a>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!user?.isSub">
+        <h1 class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
+          {{user?.name}}, vaya! <br> Debes de estar suscrito al canal para poder participar
+        </h1>
+
+        <div  class="not-subscribed animate__animated animate__fadeInUp animation-1 btn ">
+         <div class="d-line-grid">
+           <a (click)="redirectHome()" data-micron="tada" [href]="'https://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1'"
+              target="_blank" class="  btn-default-1 pulse">
+             <span>¡Suscríbete!</span></a>
+         </div>
+        </div>
+      </ng-container>
+
+    </ng-container>
+
+
   </div>
 </div>
 
-<!--<div class="callback-wrapper-footer">-->
-<!--  <img *ngIf="loading" class="animate__animated animate__fadeInUp " src="../../../../assets/images/laptop.png" alt="">-->
-<!--  <img *ngIf="!loading" class="animate__animated animate__fadeInUp " src="../../../../assets/images/neutral.png" alt="">-->
-<!--</div>-->
+<ng-container *ngIf="showComment">
+  <button (click)="showComment = false" class="close-arrow animate__animated animate__fadeInDown">
+    <i class="uil uil-arrow-down"></i>
+  </button>
+  <div class="list-comment animate__animated animate__fadeInUp animation-1 ">
+
+    <ul>
+      <li *ngFor="let data of listComment">
+        <a target="_blank" href="https://www.youtube.com/watch?v={{data.video}}"><i
+          class="uil uil-external-link-alt"></i></a>
+        {{data.comment}}
+      </li>
+    </ul>
+  </div>
+</ng-container>
+
+<div class="callback-wrapper-footer" *ngIf="!showComment">
+  <ng-container *ngIf="loading">
+    <img class="animate__animated animate__fadeInUp " src="../../../../assets/images/laptop.png" alt="">
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+
+    <ng-container *ngIf="user?.isSub">
+      <img *ngIf="numberComment>0" class="animate__animated animate__fadeInUp "
+           src="../../../../assets/images/neutral.png" alt="">
+      <img *ngIf="numberComment<1" class="animate__animated animate__fadeInUp "
+           src="../../../../assets/images/sad.png" alt="">
+    </ng-container>
+
+    <ng-container *ngIf="!user?.isSub">
+      <img class="animate__animated animate__fadeInUp "
+           src="../../../../assets/images/angry.png" alt="">
+    </ng-container>
+
+
+  </ng-container>
+
+</div>
+
