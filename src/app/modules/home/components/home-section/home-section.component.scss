@@ -118,7 +118,7 @@
 
 @media screen and (max-width: 768px) {
   .btn-cta {
-    width: 100%;
+    //width: 100%;
     margin: 2rem 0;
   }
 
@@ -147,13 +147,13 @@
       margin-right: .5rem;
       font-family: 'Montserrat', sans-serif;
 
-      &.fb-btn {
-        background-color: #3769d0;
+      &.yt-btn {
+        background-color: #DB4437;
         color: $textColor;
       }
 
-      &.fb-btn-second {
-        background-color: #3769d0;
+      &.yt-btn-second {
+        background-color: #DB4437;
         color: $textColor;
       }
 

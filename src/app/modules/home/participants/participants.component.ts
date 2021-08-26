@@ -32,7 +32,7 @@ export class ParticipantsComponent implements OnInit {
   loadData(): void {
     this.user = JSON.parse(this.localStorage.get('user')) || null
     //TODO
-    this.apiRestService.getNumberComments(this.user.name)
+    this.apiRestService.getNumberComments(this.user?._id)
       .pipe(
         delay(2000),
         finalize(() => this.loading = false)

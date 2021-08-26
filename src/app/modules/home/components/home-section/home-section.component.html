@@ -6,19 +6,24 @@
       <div class="wrapper-title">
         <h1 #asTitle class="title animate__animated animate__fadeInDown animation-5"></h1>
 
-<!--        <div data-micron="tada" (click)="move(true)" class="btn-cta pointer pulse">-->
-<!--          <i class="uil uil-arrow-down-right"></i>-->
-<!--        </div>-->
+        <!--        <div data-micron="tada" (click)="move(true)" class="btn-cta pointer pulse">-->
+        <!--          <i class="uil uil-arrow-down-right"></i>-->
+        <!--        </div>-->
         <div *ngIf="showFaq" class="animate__animated animate__fadeInDown animation-5">
-          <div (click)="utilService.scrollToBottom()"  data-micron="tada" class="draw-border image-cta-down btn-cta pointer pulse ">
+          <div (click)="utilService.scrollToBottom()" data-micron="tada"
+               class="draw-border image-cta-down btn-cta pointer pulse ">
           </div>
         </div>
       </div>
     </div>
 
-    <div class="in-wrapper mobile-section col-12 col-xs-12 col-md-12 col-lg-6 ">
+    <div *ngIf="showFaq"
+         class="in-wrapper mobile-section col-12 col-xs-12 col-md-12 col-lg-6 animate__animated animate__fadeInDown animation-5">
       <div *ngFor="let a of menuSteps;let i = index">
-        <button (click)="a?.cb()" class="social-btn fb-btn {{a.class}}">
+        <a target="_blank" [href]="a?.url" class="social-btn  {{a.class}}" *ngIf="a?.url">
+          <span [innerHTML]="a.icon"></span>
+        </a>
+        <button *ngIf="!a?.url" (click)="a?.cb()" class="social-btn  {{a.class}}">
           <span [innerHTML]="a.icon"></span>
         </button>
         <div class="step">
@@ -39,7 +44,8 @@
         <div (click)="moreInfo('SHOW_FAQ_1')" class="pointer  col-12 animate__animated animate__fadeInDown animation-3">
           <h4 class="sub-title decorator spacer ">¿Cómo participo?</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ducimus facere quos similique vero voluptas.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ducimus facere quos similique vero
+            voluptas.
           </p>
           <div *ngIf="showCase">
             <ul class="list-not row">
@@ -58,10 +64,10 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia.
           </p>
         </div>
-        <div (click)="moreInfo('SHOW_FAQ_3')"  class="pointer col-6 animate__animated animate__fadeInDown animation-5">
+        <div (click)="moreInfo('SHOW_FAQ_3')" class="pointer col-6 animate__animated animate__fadeInDown animation-5">
           <h4 class="sub-title decorator spacer">¿Hasta cuando es valido?</h4>
           <p>
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia.
           </p>
         </div>
 
@@ -73,16 +79,26 @@
         <div class="col-12 animate__animated animate__fadeInDown animation-3">
           <h4 class="sub-title decorator spacer ">¿Cómo participo?</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi soluta, veritatis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
+            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
+            soluta, veritatis?
           </p>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi soluta, veritatis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
+            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
+            soluta, veritatis?
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi soluta, veritatis?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi soluta, veritatis?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi soluta, veritatis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
+            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
+            soluta, veritatis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
+            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
+            soluta, veritatis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
+            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
+            soluta, veritatis?
           </p>
 
         </div>

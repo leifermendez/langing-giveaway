@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, View
 import {UtilService} from "../../../../services/util.service";
 import Typewriter from 't-writer.js';
 import {Subscription} from "rxjs";
+import {environment} from "../../../../../environments/environment";
 
 @Component({
   selector: 'app-home-section',
@@ -63,17 +64,18 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
     const observer3$ = this.utilService.cbShowAll.subscribe(a => this.showFaq = a)
     this.menuSteps = [
       {
-        icon: '<i class="uil uil-facebook-f"></i>',
+        icon: '<i class="uil uil-google"></i>',
         label: 'Conectar Facebook',
-        class: 'fb-btn btn-step-1',
-        step: 'Paso 1'
+        class: 'yt-btn btn-step-1',
+        step: 'Paso 1',
+        url: `${environment.api}/auth/login-youtube`
       },
       {
         icon: '<i class="uil uil-youtube"></i>',
         label: 'Comentar Post',
         class: 'fb-btn-third btn-step-3',
         step: '+ info',
-        cb: () => this.move(true)
+        url: `${environment.videoMain}`
       }
     ]
     this.listObservables$ = [observer1$, observer2$, observer3$];

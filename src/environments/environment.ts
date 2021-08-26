@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: 'http://localhost:3000/api/1.0',
-  videoMain: 'https://www.youtube.com/watch?v=ztatrDq65oU'
+  videoMain: 'https://www.youtube.com/watch?v=4N-SYyu1fY8'
 };
 
 /*

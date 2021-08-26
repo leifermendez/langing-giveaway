@@ -15,7 +15,7 @@ export class ApiRestService {
     return this.httpClient.get<any>(`${environment.api}/participants`);
   }
 
-  getNumberComments(name = ''): Observable<any> {
-    return this.httpClient.get<any>(`${environment.api}/comments`);
+  getNumberComments(id = ''): Observable<any> {
+    return this.httpClient.get<any>(`${environment.api}/comments/${id}`);
   }
 }

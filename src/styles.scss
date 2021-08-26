@@ -321,12 +321,25 @@ p {
       background-color: white;
     }
   }
+
+  .sub-title{
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
 }
 
 
 @media screen and (max-width: 368px) {
 
   .title {
-    font-size: 4rem;
+    font-size: 3rem;
   }
+
+  .sub-title{
+    font-size: 1rem;
+  }
+
 }

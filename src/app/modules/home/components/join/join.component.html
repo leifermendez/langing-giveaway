@@ -15,12 +15,12 @@
 
     <ng-container *ngIf="currentUser">
       <div >
-        <a
+        <button [routerLink]="['/','participants']"
            class="social-btn btn draw-border user-btn btn-step-1 animate__animated animate__fadeInDown animation-7">
           <span class="text">
 <!--            <i class="uil uil-comment-alt-verify"></i>-->
           </span>
-        </a>
+        </button>
         <div class="step animate__animated animate__fadeInDown animation-8">
           <span>Ver comentarios</span>
         </div>
@@ -56,7 +56,7 @@
     <div class="in-wrapper-video-player">
       <div class="close pointer" (click)="move('HIDE_VIDEO');closeVideo()">Cerrar <i class="uil uil-times"></i></div>
       <youtube-player (stateChange)="test($event)" (ready)="setPlayer($event)" [playerVars]="playerVars"
-                      [className]="'video-player'" videoId="ZP-5TZkFv_8"></youtube-player>
+                      [className]="'video-player'" videoId="4N-SYyu1fY8"></youtube-player>
     </div>
 
   </div>
