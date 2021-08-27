@@ -1,64 +1,51 @@
 <div *ngIf="showAll">
-  <div #asJoin class="wrapper-join ">
-    <ng-container *ngIf="!currentUser">
-      <div *ngFor="let a of menuSteps;let i = index">
-        <a [href]="a?.href"
-           class="social-btn btn draw-border {{a?.class}} animate__animated animate__fadeInDown animation-7">
-          <span class="icon-block" [innerHTML]="a.icon"></span>
-          <span class="text">{{a.label}}</span>
-        </a>
-        <div class="step animate__animated animate__fadeInDown animation-8">
-          <span>Paso <b>{{i + 1}}</b></span>
-        </div>
-      </div>
-    </ng-container>
 
-    <ng-container *ngIf="currentUser">
-      <div >
-        <button [routerLink]="['/','participants']"
-           class="social-btn btn draw-border user-btn btn-step-1 animate__animated animate__fadeInDown animation-7">
+  <ng-container *ngIf="!showFaq">
+    <div #asJoin class="wrapper-join ">
+      <ng-container *ngIf="!currentUser">
+        <div *ngFor="let a of menuSteps;let i = index">
+          <a [href]="a?.href"
+             class="social-btn btn draw-border {{a?.class}} animate__animated animate__fadeInDown animation-7">
+            <span class="icon-block" [innerHTML]="a.icon"></span>
+            <span class="text">{{a.label}}</span>
+          </a>
+          <div class="step animate__animated animate__fadeInDown animation-8">
+            <span>Paso <b>{{i + 1}}</b></span>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="currentUser">
+        <div >
+          <button [routerLink]="['/','participants']"
+                  class="social-btn btn draw-border user-btn btn-step-1 animate__animated animate__fadeInDown animation-7">
           <span class="text">
-<!--            <i class="uil uil-comment-alt-verify"></i>-->
           </span>
-        </button>
-        <div class="step animate__animated animate__fadeInDown animation-8">
-          <span>Ver comentarios</span>
+          </button>
+          <div class="step animate__animated animate__fadeInDown animation-8">
+            <span>Ver comentarios</span>
+          </div>
         </div>
-      </div>
-    </ng-container>
+      </ng-container>
 
-    <div>
-      <button class="social-btn btn draw-border avatar-mock-btn animate__animated animate__fadeInDown animation-8"
-              (click)="move('SHOW_VIDEO')">
-        <span class="icon-block icon-play"><i class="uil uil-youtube"></i></span>
-      </button>
-      <div class="step animate__animated animate__fadeInDown animation-9">
-        <span>¿Más info?</span>
+      <div>
+        <button class="social-btn btn draw-border avatar-mock-btn animate__animated animate__fadeInDown animation-8"
+                (click)="move('SHOW_VIDEO')">
+          <span class="icon-block icon-play"><i class="uil uil-youtube"></i></span>
+        </button>
+        <div class="step animate__animated animate__fadeInDown animation-9">
+          <span>¿Más info?</span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!--  <div #asComments class="wrapper-comments ">-->
-  <!--    <div class="wrapper-count">-->
-  <!--      <h1 [countUp]="participants.length">0</h1>-->
-  <!--      <h4>Participantes</h4>-->
-  <!--    </div>-->
-  <!--    <div class="in">-->
-  <!--      <div class="avatar-mock animate__animated animate__fadeInDown animation-{{i*3}}"-->
-  <!--           *ngFor="let a of participants;let i = index" [style.backgroundImage]="'url('+a?.avatar+')'">-->
-
-  <!--      </div>-->
-  <!--    </div>-->
-
-  <!--  </div>-->
+  </ng-container>
 
   <div #asVideo class="wrapper-video-player hide-video">
     <div class="in-wrapper-video-player">
       <div class="close pointer" (click)="move('HIDE_VIDEO');closeVideo()">Cerrar <i class="uil uil-times"></i></div>
-      <youtube-player (stateChange)="test($event)" (ready)="setPlayer($event)" [playerVars]="playerVars"
+      <youtube-player  (ready)="setPlayer($event)" [playerVars]="playerVars"
                       [className]="'video-player'" videoId="4N-SYyu1fY8"></youtube-player>
     </div>
-
   </div>
 
 

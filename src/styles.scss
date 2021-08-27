@@ -11,6 +11,23 @@ body, head {
   text-rendering: optimizeLegibility;
 }
 
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: $textColor;
+  transition: all ease 150ms;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.badge-text {
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, .3);
+  padding: .15rem .35rem;
+}
+
 .wrapper {
   padding: 0 3rem;
   transition: all ease 500ms;
@@ -20,7 +37,7 @@ body, head {
   }
 }
 
-.btn-default-1{
+.btn-default-1 {
   cursor: pointer;
   background-color: transparent;
   padding: .75rem 1rem;
@@ -81,7 +98,7 @@ body, head {
   display: none !important;
 }
 
-.d-line-grid{
+.d-line-grid {
   display: inline-grid !important;
 }
 
@@ -188,9 +205,13 @@ body, head {
 }
 
 p {
-  opacity: .7;
-  font-size: .9rem;
+  font-size: 1rem;
   letter-spacing: .5px;
+  line-height: 1.5rem;
+}
+
+hr {
+  border-color: #ffffff0f;
 }
 
 .pointer {
@@ -280,7 +301,7 @@ p {
 
 .wrapper-fb {
 
-  iframe{
+  iframe {
     background-color: $textColor;
     box-shadow: 0 0 20px 3px black;
   }
@@ -322,8 +343,8 @@ p {
     }
   }
 
-  .sub-title{
-    font-size: 1rem;
+  .sub-title {
+    font-size: 1.5rem;
   }
 
   .title {
@@ -338,8 +359,9 @@ p {
     font-size: 3rem;
   }
 
-  .sub-title{
-    font-size: 1rem;
+  .sub-title {
+    font-size: 1.5rem;
   }
+
 
 }

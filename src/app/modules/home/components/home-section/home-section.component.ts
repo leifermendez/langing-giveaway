@@ -19,11 +19,28 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
   menuSteps: Array<any> = []
   showFaq = false;
   listObservables$: Array<Subscription> = []
+  listSocial: Array<any> = []
 
   constructor(public utilService: UtilService, private renderer2: Renderer2) {
   }
 
   ngOnInit(): void {
+
+    this.listSocial = [
+      {
+        name: 'YOUTUBE',
+        url: 'http://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw'
+      },
+      {
+        name: 'FACEBOOK',
+        url: 'https://www.facebook.com/leifermendez.dev'
+      },
+      {
+        name: 'TELEGRAM',
+        url: 'https://t.me/leifermendez'
+      }
+    ]
+
     const observer1$ = this.utilService.cbAction.subscribe(({a}) => {
       if (['SHOW_VIDEO', 'SHOW_COMMENT'].includes(a)) {
         this.initAnimate();
@@ -39,24 +56,8 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
         this.initMove('asHideFaq1')
         return
       }
-      if (a && a === 'SHOW_FAQ_2') {
-        this.initMove('asHideFaq2')
-        return
-      }
-      if (a && a === 'SHOW_FAQ_3') {
-        this.initMove('asHideFaq3')
-        return
-      }
       if (a && a === 'HIDE_FAQ_1') {
         this.removeMove('asHideFaq1')
-        return
-      }
-      if (a && a === 'HIDE_FAQ_2') {
-        this.removeMove('asHideFaq2')
-        return
-      }
-      if (a && a === 'HIDE_FAQ_3') {
-        this.removeMove('asHideFaq3')
         return
       }
 

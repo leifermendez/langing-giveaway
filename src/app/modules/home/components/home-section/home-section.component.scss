@@ -79,7 +79,7 @@
 }
 
 .translate-left {
-  transform: translateX(-95vw);
+  transform: translateX(-100vw);
 }
 
 .mobile-section {
@@ -87,7 +87,7 @@
 }
 
 .hover-faq-section {
-  background-color: $mainColor;
+  //background-color: $mainColor;
 }
 
 .faq-section {
@@ -97,11 +97,17 @@
   top: 0;
   z-index: -1;
   height: 10rem;
+  overflow-y: auto;
 
   &.show-faq {
     opacity: 1;
-    transform: translateX(95vw);
+    overflow-y: initial;
+    transform: translateX(100vw);
   }
+}
+
+.social-badge{
+  margin-right: .5rem;
 }
 
 .back-arrow{
@@ -114,6 +120,9 @@
   justify-content: center;
   align-items: center;
   font-size: 3rem;
+  position: sticky;
+  z-index: 1;
+  //left: x;
 }
 
 @media screen and (max-width: 768px) {
@@ -122,6 +131,12 @@
     margin: 2rem 0;
   }
 
+  .back-arrow{
+    left: auto;
+    right: 0;
+    top: 0;
+
+  }
   .mobile-section {
     justify-content: flex-start;
     width: 100%;

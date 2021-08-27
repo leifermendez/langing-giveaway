@@ -5,10 +5,6 @@
         Somos 10K en Youtube</h4>
       <div class="wrapper-title">
         <h1 #asTitle class="title animate__animated animate__fadeInDown animation-5"></h1>
-
-        <!--        <div data-micron="tada" (click)="move(true)" class="btn-cta pointer pulse">-->
-        <!--          <i class="uil uil-arrow-down-right"></i>-->
-        <!--        </div>-->
         <div *ngIf="showFaq" class="animate__animated animate__fadeInDown animation-5">
           <div (click)="utilService.scrollToBottom()" data-micron="tada"
                class="draw-border image-cta-down btn-cta pointer pulse ">
@@ -17,10 +13,11 @@
       </div>
     </div>
 
+    <!-- Section Mobile Buttons -->
     <div *ngIf="showFaq"
          class="in-wrapper mobile-section col-12 col-xs-12 col-md-12 col-lg-6 animate__animated animate__fadeInDown animation-5">
       <div *ngFor="let a of menuSteps;let i = index">
-        <a target="_blank" [href]="a?.url" class="social-btn  {{a.class}}" *ngIf="a?.url">
+        <a [href]="a?.url" class="social-btn  {{a.class}}" *ngIf="a?.url">
           <span [innerHTML]="a.icon"></span>
         </a>
         <button *ngIf="!a?.url" (click)="a?.cb()" class="social-btn  {{a.class}}">
@@ -30,115 +27,119 @@
           <span>{{a.step}}</span>
         </div>
       </div>
-
     </div>
 
-    <!--    <div class="col-12 col-xs-12 col-md-12 col-lg-6 text-center">-->
-    <!--      <div class="avatar-mock">-->
-
-    <!--      </div>-->
-    <!--    </div>-->
-
+    <!-- FAQ Section --->
     <div *ngIf="showFaq" class="col-12 col-xs-12 col-md-12 col-lg-12 hover-faq-section">
       <div class="row">
-        <div (click)="moreInfo('SHOW_FAQ_1')" class="pointer  col-12 animate__animated animate__fadeInDown animation-3">
+        <!-- FAQ 1 -->
+        <div (click)="moreInfo('SHOW_FAQ_1')"
+             class="pointer col-12 col-md-6 animate__animated animate__fadeInDown animation-3">
           <h4 class="sub-title decorator spacer ">¿Cómo participo?</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ducimus facere quos similique vero
-            voluptas.
+            Para participar en el sorteo debes estar suscrito al canal.
+            <br> Si
+            aún no estás suscrito
+            <a target="_blank" href="http://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1">ÚNETE
+              aquí</a><br>
+            <span class="badge-text">Continuar leyendo</span>
           </p>
-          <div *ngIf="showCase">
-            <ul class="list-not row">
-              <li class="list-item col-3 gift-wrapper  animate__animated animate__fadeInDown animation-{{i}}"
-                  *ngFor="let a of [1,1,1];let i = index">
-                <div class="gift">
-                  <img src="https://images-na.ssl-images-amazon.com/images/I/51OhYqp9zFL.jpg" alt="">
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
-        <div (click)="moreInfo('SHOW_FAQ_2')" class="pointer col-6 animate__animated animate__fadeInDown animation-4">
+
+        <!-- FAQ 2 -->
+        <div (click)="moreInfo('SHOW_FAQ_1')"
+             class="pointer col-12 col-md-6 animate__animated animate__fadeInDown animation-4">
           <h4 class="sub-title decorator spacer">¿Cuales son los premios?</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia.
-          </p>
-        </div>
-        <div (click)="moreInfo('SHOW_FAQ_3')" class="pointer col-6 animate__animated animate__fadeInDown animation-5">
-          <h4 class="sub-title decorator spacer">¿Hasta cuando es valido?</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia.
+            El aprendizaje es un regalo que nace alguna vez y se queda contigo hasta que mueres, por eso el premio de
+            este SORTEO es una <b>MEMBRESÍA</b> de un <b>MES</b> de formación profesional de los amigos de...
+            <br> <span class="badge-text">Continuar leyendo</span>
           </p>
         </div>
 
       </div>
+
     </div>
 
     <div #asHideFaq1 class="faq-section col-12 col-xs-12 col-md-12 col-lg-11">
       <div class="row">
-        <div class="col-12 animate__animated animate__fadeInDown animation-3">
-          <h4 class="sub-title decorator spacer ">¿Cómo participo?</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
-            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
-            soluta, veritatis?
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
-            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
-            soluta, veritatis?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
-            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
-            soluta, veritatis?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
-            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
-            soluta, veritatis?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur eos minus modi molestiae nisi
-            obcaecati quidem suscipit! Debitis delectus labore modi molestiae provident quas quod repudiandae sequi
-            soluta, veritatis?
-          </p>
-
-        </div>
         <div (click)="moreInfo('HIDE_FAQ_1')" class="back-arrow pointer">
           <i class="uil uil-arrow-right"></i>
         </div>
-
-      </div>
-    </div>
-    <div #asHideFaq2 class="faq-section col-12 col-xs-12 col-md-12 col-lg-11">
-      <div class="row">
-        <div class="pointer  col-12 animate__animated animate__fadeInDown animation-3">
-          <h4 class="sub-title decorator spacer ">¿Cuales son los premios?</h4>
+        <div class="col-12 animate__animated animate__fadeInDown animation-3">
+          <h4 class="sub-title decorator spacer ">¿Cómo participo?</h4>
           <p>
-            22 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia. AA
+            Para participar en el sorteo debes estar suscrito al canal.
+            <br> Si
+            aún no estás suscrito
+            <a target="_blank" href="http://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1">ÚNETE
+              aquí</a><br><br>
+          </p>
+          <hr>
+          <p>
+            <b>Si eres del equipo del FRONTEND:</b> <br> Dejame saber ¿Porque eres un desarrollador frontend? y ¿Qué es
+            lo que más te gusta de ser un desarrollador frontend?
+            Para ello vas a dejar tu comentario iniciando <b><i>#leifermendez soy un desarrollador frontend...</i></b>
+            en el siguiente <b><a target="_blank" href="https://www.youtube.com/watch?v=6741ceWzsKQ">👉 VIDEO</a></b>
+            y asi YA ESTÁS PARTICIPANDO
+          </p>
+          <hr>
+          <p>
+            <b>Si eres del equipo del BACKEND:</b> <br> Dejame saber ¿Porque eres un desarrollador backend? y ¿Qué es
+            lo que más te gusta de ser un desarrollador backend?
+            Para ello vas a dejar tu comentario iniciando <b><i>#leifermendez soy un desarrollador backend...</i></b>
+            en el siguiente <b><a target="_blank" href="https://www.youtube.com/watch?v=FqLbmjWAT4g">👉 VIDEO</a></b>
+            y asi YA ESTÁS PARTICIPANDO
           </p>
 
         </div>
-        <div (click)="moreInfo('HIDE_FAQ_2')" class="back-arrow pointer">
-          <i class="uil uil-arrow-right"></i>
-        </div>
-
-
-      </div>
-    </div>
-    <div #asHideFaq3 class="faq-section col-12 col-xs-12 col-md-12 col-lg-11">
-      <div class="row">
-        <div class="pointer  col-12 animate__animated animate__fadeInDown animation-3">
-          <h4 class="sub-title decorator spacer ">¿Cuales son los premios?</h4>
+        <div class="col-12 animate__animated animate__fadeInDown animation-3">
+          <h4 class="sub-title decorator spacer ">¿Cuáles son los premios?</h4>
           <p>
-            CC Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, mollitia. AA
+            El aprendizaje es un regalo que nace alguna vez y se queda contigo hasta que mueres, por eso el premio de
+            este <b>SORTEO</b> es una <b>MEMBRESÍA</b> de un mes de formación profesional de los amigos de
+            <b>CODELYTV</b>.
+          </p>
+          <p> Donde encontrarás
+            más de <b>40 cursos avanzados</b>, prácticos y al grano, con este premio podrás aprender cosas nuevas y
+            continuar
+            mejorando cómo programador. <br> Si aún no conoces a mis amigos, checate a estos crack en este link:</p>
+
+        </div>
+        <div class="col-12 animate__animated animate__fadeInDown animation-3">
+          <h4 class="sub-title decorator spacer ">¿Hasta cuando es válido?</h4>
+          <p>
+            El sorteo tendrá un tiempo de participación de diez días.
           </p>
 
         </div>
+        <div class="col-12 animate__animated animate__fadeInDown animation-3">
+          <h4 class="sub-title decorator spacer ">¿Cómo sé si yo gané?</h4>
+          <p>
+            El día xx a las xx horas se llevará a cabo el sorteo por medio de un en vivo en el canal de
+            <a href="http://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1" target="_blank">
+              <b>YOUTUBE</b>
+            </a>
+            , y desde
+            ya ESTAS INVITADO.
+          </p>
 
-        <div (click)="moreInfo('HIDE_FAQ_3')" class="back-arrow pointer">
-          <i class="uil uil-arrow-right"></i>
+        </div>
+        <div class="col-12 animate__animated animate__fadeInDown animation-3">
+          <h4 class="sub-title decorator spacer ">¿Cómo se realizará el sorteo?</h4>
+          <p>
+            A través de una plataforma se recolectarán los comentarios que cumplan con los criterios de participación, y
+            de manera aleatoria arroja el GANADOR.
+            El código fuente de está plataforma estará libre en mi repositorio.
+            Si no logras asistir al en vivo, no te preocupes estaré anunciando el ganador en mis redes sociales:
+            <br>
+            <b class="social-badge" *ngFor="let s of listSocial"><a [href]="s?.url" target="_blank">{{s?.name}}</a></b>
+          </p>
+
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
