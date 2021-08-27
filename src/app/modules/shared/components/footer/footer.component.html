@@ -1,0 +1,19 @@
+<ng-container *ngIf="utilService.showFooter">
+  <div class="wrapper-footer">
+    <div *ngIf="showFaq">
+      <div class="legal-footer animate__animated animate__fadeInUp animation-1">
+        <button (click)="utilService.showFooter = false" class="btn-default-1 btn-close"><i
+          class="uil uil-multiply"></i></button>
+        <ul>
+          <li class="pointer"><a href="/legal/legal" target="_blank">Términos y condiciones</a></li>
+          <li class="pointer">
+            <a href="/legal/privacy" target="_blank">Politicas de privacidad</a>
+          </li>
+          <li class="pointer" [routerLink]="['/','legal','raffle']">
+            <a href="/legal/raffle" target="_blank">Politicas del sorteo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -7,6 +7,7 @@ export class UtilService {
   cbAction: EventEmitter<any> = new EventEmitter<any>();
   cbMoreInfo: EventEmitter<any> = new EventEmitter<any>()
   cbShowAll: EventEmitter<boolean> = new EventEmitter<boolean>(false)
+  showFooter = true;
 
   constructor() {
   }

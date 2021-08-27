@@ -11,9 +11,10 @@ import {YouTubePlayerModule} from "@angular/youtube-player";
     HeaderComponent,
     FooterComponent
   ],
-  exports: [
-    HeaderComponent
-  ],
+    exports: [
+        HeaderComponent,
+        FooterComponent
+    ],
     imports: [
         CommonModule,
         RouterModule,

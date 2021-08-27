@@ -1,6 +1,55 @@
+@import "src/shared";
+
 :host {
   display: block;
-  z-index: 0;
+  z-index: 4;
   position: relative;
   transition: all ease 250ms;
+
+}
+
+.wrapper-footer{
+  position: relative;
+  width: 100%;
+  font-size: 80%;
+  z-index: 3;
+}
+
+.legal-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: $textColor;
+  color: $mainColor;
+  font-weight: 500;
+  margin: 1rem;
+  padding: .75rem;
+  width: 14rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  right: 1rem;
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      padding: .3rem;
+      a{
+        font-weight: 400;
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.btn-close{
+  position: absolute;
+  z-index: 1;
+  background: $mainColor;
+  right: -20px;
+  top: -20px;
+}
+
+@media screen and (max-width: 768px) {
+  .legal-footer{
+    width: 80%;
+  }
 }
