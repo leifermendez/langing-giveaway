@@ -10,6 +10,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CookieService} from 'ngx-cookie-service';
 import {SessionInterceptor} from "./core/interceptors/session.interceptor";
 import {NgxLocalStorageModule} from 'ngx-localstorage';
+import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+
+const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {NgxLocalStorageModule} from 'ngx-localstorage';
     HttpClientModule,
     FacebookModule.forRoot(),
     AppRoutingModule,
-    NgxLocalStorageModule.forRoot()
+    NgxLocalStorageModule.forRoot(),
+    SocketIoModule.forRoot(config)
   ],
   providers: [
     CookieService,

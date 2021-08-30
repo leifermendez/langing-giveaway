@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/post/post.module').then(m => m.PostModule)
   },
   {
+    path: 'event',
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
+  },
+  {
     path: '**',
     redirectTo: '/'
   }

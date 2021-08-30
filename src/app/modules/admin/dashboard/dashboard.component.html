@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="wrapper-dashboard ">
+  <div class="cards-block">
+    <div *ngFor="let a of participants; let i = index"
+         class="card-single animate__animated animate__fadeInDown comment-{{a?._id}}"
+         [ngClass]="{'win-win':a?._id === winner?._id}">
+      {{i}}
+    </div>
+  </div>
+</div>
+<!--<button (click)="random()">click</button>-->
+<button (click)="sendRaffle()">send</button>
+<button (click)="sendRaffleDone()">win</button>
+
+<div class="alert-winner" *ngIf="winner?._id">
+  <div class="card-comment animate__animated animate__bounceIn pulse">
+    <b>Ganador/a</b>
+    <div class="avatar">
+      <a target="_blank" href="{{winner?.authorChannelUrl}}"><i
+        class="uil uil-external-link-alt"></i></a> {{winner?.author}}
+    </div>
+    <div>
+      <a target="_blank" href="https://www.youtube.com/watch?v={{winner?.video}}"><i
+        class="uil uil-external-link-alt"></i></a> {{winner?.comment}}
+    </div>
+  </div>
+</div>
