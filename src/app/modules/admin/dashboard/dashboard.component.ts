@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     this.getRaffleService.get()
       .subscribe(({data, comments}) => {
         this.setStateDynamic(data)
-        this.participants = [...comments, ...[...Array.from(Array(100)).keys()]]
+        this.participants = [...comments, ...[...Array.from(Array(350)).keys()]]
       })
   }
 
@@ -62,13 +62,7 @@ export class DashboardComponent implements OnInit {
       })
   }
 
-  sendRaffle(): void {
-    this.socketCustom.sendEvent('pick-winner', '')
-  }
 
-  sendRaffleDone(): void {
-    this.socketCustom.sendEvent('pick-winner-done', '')
-  }
 
   random(): void {
     const tmpParticipants = this.participants;

@@ -5,6 +5,7 @@ import {delay, finalize, tap, map} from "rxjs/operators";
 import {of} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {Router} from "@angular/router";
+import {HomeService} from "../services/home.service";
 
 @Component({
   selector: 'app-participants',
@@ -22,7 +23,7 @@ export class ParticipantsComponent implements OnInit {
   // public dd!: any;
 
   constructor(private apiRestService: ApiRestService, private localStorage: LocalStorageService,
-              private router: Router) {
+              private router: Router, private homeService: HomeService) {
   }
 
   ngOnInit(): void {
@@ -52,5 +53,10 @@ export class ParticipantsComponent implements OnInit {
 
   showMyComments(): void {
     this.showComment = true;
+  }
+
+  changeUser(): void {
+    this.homeService.cleanCurrentUser()
+    this.router.navigate(['/'])
   }
 }

@@ -8,9 +8,11 @@
 
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="user?.isSub">
-        <h1  class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
+        <h1 class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
           {{user?.name}}, vaya! <br> Recuerda más comentarios significa más oportunidades de ganar
         </h1>
+        <h4 class="animate__animated animate__fadeInDown animation-2 pointer" (click)="changeUser()">¿Cambiar de
+          cuenta?</h4>
         <div [countUp]="numberComment" class="counter-comments animate__animated animate__fadeInUp animation-1">
         </div>
         <div *ngIf="numberComment>0" class="total-comments animate__animated animate__fadeInUp animation-1 btn ">
@@ -31,12 +33,13 @@
           {{user?.name}}, vaya! <br> Debes de estar suscrito al canal para poder participar
         </h1>
 
-        <div  class="not-subscribed animate__animated animate__fadeInUp animation-1 btn ">
-         <div class="d-line-grid">
-           <a (click)="redirectHome()" data-micron="tada" [href]="'https://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1'"
-              target="_blank" class="  btn-default-1 pulse">
-             <span>¡Suscríbete!</span></a>
-         </div>
+        <div class="not-subscribed animate__animated animate__fadeInUp animation-1 btn ">
+          <div class="d-line-grid">
+            <a (click)="redirectHome()" data-micron="tada"
+               [href]="'https://www.youtube.com/channel/UCgrIGp5QAnC0J8LfNJxDRDw?sub_confirmation=1'"
+               target="_blank" class="  btn-default-1 pulse">
+              <span>¡Suscríbete!</span></a>
+          </div>
         </div>
       </ng-container>
 

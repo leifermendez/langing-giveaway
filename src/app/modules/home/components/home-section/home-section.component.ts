@@ -106,7 +106,7 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
 
     writer
       .changeCursorColor('white')
-      .type('¿De cuál equipo formas parte Frontend o Backend?')
+      .type('¿A qué equipo perteneces Frontend o Backend?')
       .changeOps({deleteSpeed: 80})
       .then(() => this.utilService.cbShowAll.emit(true))
       .start();

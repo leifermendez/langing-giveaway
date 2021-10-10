@@ -21,7 +21,7 @@ export class SessionGuard implements CanActivate {
     const session = this.cookieService.get('token') || null;
     const check = !!(session);
     if (!check) {
-      this.router.navigate(['/'])
+      this.router.navigate(['/'], {queryParams: {error: 'SESSION_EXPIRED'}})
     }
     return check;
   }

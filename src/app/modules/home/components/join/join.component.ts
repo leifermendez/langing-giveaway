@@ -58,6 +58,16 @@ export class JoinComponent implements OnInit {
     // @ts-ignore
     this.currentUser = this.homeService.getCurrentUser()
     this.steps = ['STEP_1'];
+
+    const errorSession = this.route.queryParams.subscribe(({error}) => {
+      if (error) {
+        this.currentUser = null;
+        this.homeService.cleanCurrentUser()
+      }
+    })
+
+    console.log(errorSession)
+
     this.menuSteps = [
       {
         icon: '<i class="uil uil-google"></i>',

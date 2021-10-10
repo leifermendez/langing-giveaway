@@ -7,7 +7,7 @@ import {LocalStorageService} from "ngx-localstorage";
 })
 export class HomeService {
 
-  constructor(private localStorage: LocalStorageService) {
+  constructor(private localStorage: LocalStorageService, private cookieService: CookieService) {
   }
 
   getCurrentUser(): any {
@@ -17,5 +17,10 @@ export class HomeService {
     } catch (e) {
       return null
     }
+  }
+
+  cleanCurrentUser(): any {
+    this.localStorage.remove('user')
+    this.cookieService.delete('token')
   }
 }
