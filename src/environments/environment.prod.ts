@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api: 'http://localhost:3000/api/1.0'
+  api: 'https://api-10k.herokuapp.com',
+  videoMain: 'https://www.youtube.com/watch?v=4N-SYyu1fY8'
 };
