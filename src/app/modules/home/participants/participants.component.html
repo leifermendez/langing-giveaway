@@ -7,12 +7,13 @@
     </h1>
 
     <ng-container *ngIf="!loading">
+      <h4 class="animate__animated animate__fadeInDown animation-2 pointer" (click)="changeUser()">¿Cambiar de
+        cuenta?</h4>
       <ng-container *ngIf="user?.isSub">
         <h1 class="animate__animated animate__fadeInDown animation-2 sub-title decorator ">
           {{user?.name}}, vaya! <br> Recuerda más comentarios significa más oportunidades de ganar
         </h1>
-        <h4 class="animate__animated animate__fadeInDown animation-2 pointer" (click)="changeUser()">¿Cambiar de
-          cuenta?</h4>
+
         <div [countUp]="numberComment" class="counter-comments animate__animated animate__fadeInUp animation-1">
         </div>
         <div *ngIf="numberComment>0" class="total-comments animate__animated animate__fadeInUp animation-1 btn ">
