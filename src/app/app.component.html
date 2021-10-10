@@ -1,2 +1,7 @@
+<a [href]="loginUrl"  *ngIf="error === 'SESSION_ERROR'">
+  <div class="alert-error">
+    <b>Ups! BUG</b> en producción ¿qué raro 😜? <b>Intentemos nuevamente</b>
+  </div>
+</a>
 <router-outlet></router-outlet>
 <!--<app-footer></app-footer>-->
