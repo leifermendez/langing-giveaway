@@ -11,8 +11,9 @@ import {CookieService} from 'ngx-cookie-service';
 import {SessionInterceptor} from "./core/interceptors/session.interceptor";
 import {NgxLocalStorageModule} from 'ngx-localstorage';
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+import {environment} from "../environments/environment";
 
-const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
+const config: SocketIoConfig = {url: environment.ws, options: {}};
 
 @NgModule({
   declarations: [
