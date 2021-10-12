@@ -1,10 +1,14 @@
 <app-header></app-header>
+<div class="wrapper-dashboard-title">
+  <h4 class="sub-title decorator spacer animate__animated animate__fadeInDown animation-3">Gracias a todos los
+    participantes</h4>
+</div>
 <div class="wrapper-dashboard ">
   <div class="cards-block">
     <div *ngFor="let a of participants; let i = index"
          class="card-single animate__animated animate__fadeInDown comment-{{a?._id}}"
          [ngClass]="{'win-win':a?._id === winner?._id}">
-      {{i}}
+      <img src="assets/images/avatar-circle-3.png" alt="">
     </div>
   </div>
 </div>
