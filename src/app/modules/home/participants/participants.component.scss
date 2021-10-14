@@ -94,3 +94,16 @@
 .callback-wrapper-footer img {
   height: 45vh;
 }
+
+@media screen and (max-width: 368px) {
+  .callback-wrapper-footer {
+    justify-content: flex-end !important;
+  }
+  .callback-wrapper-footer img {
+    position: fixed !important;
+    bottom: 0 !important;
+    height: 30vh;
+    right: -4rem !important;
+  }
+
+}
