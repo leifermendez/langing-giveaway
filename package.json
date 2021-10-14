@@ -22,6 +22,7 @@
     "@angular/youtube-player": "^11.2.12",
     "ngx-cookie-service": "^12.0.3",
     "ngx-countup": "^7.3.3",
+    "ngx-device-detector": "^2.1.1",
     "ngx-facebook": "^3.0.0-0",
     "ngx-localstorage": "^3.4.0",
     "ngx-socket-io": "^4.1.0",

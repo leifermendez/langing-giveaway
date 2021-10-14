@@ -17,7 +17,7 @@
     <div *ngIf="showFaq"
          class="in-wrapper mobile-section col-12 col-xs-12 col-md-12 col-lg-6 animate__animated animate__fadeInDown animation-5">
       <div *ngFor="let a of menuSteps;let i = index">
-        <a [href]="a?.url" class="social-btn  {{a.class}}" *ngIf="a?.url">
+        <a [href]="a?.url" class="social-btn {{a.class}}" target="_blank" *ngIf="a?.url">
           <span [innerHTML]="a.icon"></span>
         </a>
         <button *ngIf="!a?.url" (click)="a?.cb()" class="social-btn  {{a.class}}">
