@@ -76,7 +76,7 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
         label: 'Comentar Post',
         class: 'fb-btn-third btn-step-3',
         step: '+ info',
-        url: `${environment.videoMain}`
+        url: `https://youtu.be/38zHGnjtCJU`
       }
     ]
     this.listObservables$ = [observer1$, observer2$, observer3$];
