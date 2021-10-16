@@ -70,8 +70,8 @@ export class JoinComponent implements OnInit {
 
     this.menuSteps = [
       {
-        icon: '<i class="uil uil-google"></i>',
-        label: 'Continuar Gmail',
+        icon: '<i class="custom-icon-google"></i>',
+        label: 'Login',
         class: 'yt-btn btn-step-1',
         href: `${environment.api}/auth/login-youtube`
       }

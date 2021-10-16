@@ -180,7 +180,15 @@ a:hover {
     background-color: black;
   }
 }
-
+.custom-icon-google{
+  background-image: url("./assets/images/login-google.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 3rem;
+  display: block;
+}
 .wrapper-video-player-fixed {
 
   .in-wrapper-video-player {

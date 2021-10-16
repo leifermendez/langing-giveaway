@@ -7,10 +7,9 @@
           <a [href]="a?.href"
              class="social-btn btn draw-border {{a?.class}} animate__animated animate__fadeInDown animation-7">
             <span class="icon-block" [innerHTML]="a.icon"></span>
-            <span class="text">{{a.label}}</span>
           </a>
           <div class="step animate__animated animate__fadeInDown animation-8">
-            <span>Paso <b>{{i + 1}}</b></span>
+            <span><b>{{a?.label}}</b></span>
           </div>
         </div>
       </ng-container>

@@ -1,7 +1,24 @@
+@import "src/shared";
+:host{
+  a{
+   &:hover{
+     text-decoration: none;
+   }
+  }
+}
 .alert-error{
   background-color: #fff75e;
   color: #1a1a1a;
   font-weight: 500;
   padding: .65rem  .35rem;
   text-align: center;
+  .wrapper-btn{
+    margin-top: .5rem;
+  }
+  button{
+    color: $mainColor;
+    font-weight: 600;
+    border-color: $mainColor;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+  }
 }

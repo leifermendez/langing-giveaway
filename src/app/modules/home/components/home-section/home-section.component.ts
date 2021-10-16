@@ -65,10 +65,10 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
     const observer3$ = this.utilService.cbShowAll.subscribe(a => this.showFaq = a)
     this.menuSteps = [
       {
-        icon: '<i class="uil uil-google"></i>',
+        icon: '<i class="custom-icon-google"></i>',
         label: 'Conectar Facebook',
         class: 'yt-btn btn-step-1',
-        step: 'Paso 1',
+        step: 'Login',
         url: `${environment.api}/auth/login-youtube`
       },
       {

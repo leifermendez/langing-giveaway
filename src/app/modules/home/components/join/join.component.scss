@@ -60,11 +60,11 @@
   width: 10rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   text-align: left;
   text-decoration: none;
-  align-items: start;
-  align-content: start;
+  align-items: center;
+  align-content: center;
   font-family: 'Montserrat', sans-serif;
 
 
@@ -113,8 +113,8 @@
   }
 
   &.yt-btn {
-    background-color: #DB4437;
-    color: $textColor;
+    background-color: white;
+    color: $mainColor;
   }
 
   &.yt-btn-second {
