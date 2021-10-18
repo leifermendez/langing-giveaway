@@ -67,7 +67,7 @@
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-auto-rows: 4rem;
+    //grid-auto-rows: 4rem;
 
     li {
       font-size: 85%;
