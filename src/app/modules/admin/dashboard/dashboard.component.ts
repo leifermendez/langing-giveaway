@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     this.getRaffleService.get()
       .subscribe(({data, comments}) => {
         this.setStateDynamic(data)
-        this.participants = [...comments, ...[...Array.from(Array(350)).keys()]]
+        this.participants = [...comments]
       })
   }
 
