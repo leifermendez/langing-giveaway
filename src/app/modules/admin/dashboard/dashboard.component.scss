@@ -63,7 +63,21 @@
     font-size: 2rem;
     font-weight: 500;
   }
+  animation: effect 5s 1;
 }
+
+@keyframes effect {
+  0%{
+    filter: blur(10px);
+  }
+  50%{
+    filter: blur(5px);
+  }
+  100%{
+    filter: blur(10);
+  }
+}
+
 @media screen and (max-width: 768px) {
 
   .cards-block{
